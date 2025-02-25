@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabut aja ini mah</title>
+
+    <style>
+      body {
+        background-color: rgb(246, 172, 172);
+        color: black;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: 700;
+      }
+
+      * {
+        outline: none;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+      }
+
+      img {
+        display: flex;
+        margin: auto;
+        padding-top: 5rem;
+      }
+
+      h1 {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        margin: 0 0.5rem;
+        margin-top: 1rem;
+      }
+
+      #button {
+        margin-top: 40px;
+      }
+
+      button {
+        width: 130px;
+        height: 60px;
+        font-size: larger;
+        border-radius: 25px;
+        cursor: pointer;
+        border: none;
+        margin-top: 30px;
+      }
+
+      #sayang {
+        margin-left: 2.5rem;
+      }
+
+      #gak {
+        position: fixed;
+        margin-left: 3rem;
+      }
+
+      button:hover {
+        background-color: pink;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <img src="gif/1.gif" />
+    <h1>Najwa, Mau Kan Ikut BBD Nanti?</h1>
+
+    <button id="sayang">Mau</button>
+    <button id="gak">Gak</button>
+
+    <script>
+      const gak = document.getElementById("gak");
+      const sayang = document.getElementById("sayang");
+      const h1 = document.querySelector("h1")
+      const img = document.querySelector("img")
+
+
+      const width = window.innerWidth - 300;
+      const height = window.innerHeight - 200;
+
+      gak.addEventListener("click", function () {
+        const random = Math.random();
+        const randomWidth = random * width;
+        const randomHeight = random * height;
+        gak.style.left = randomWidth + "px";
+        gak.style.top = randomHeight + "px";
+      });
+
+
+      sayang.addEventListener("click", function () {
+        h1.textContent = "yeyyy, makasih ya najwa rifa adniyah karena dah mau ikutt"
+        gak.style.display = "none"
+        sayang.style.display = "none"
+        img.src = "gif/2.gif"
+        img.style.width = "20rem"
+        img.style.height = "20rem"
+
+      })
+
+    </script>
+  </body>
+</html>
