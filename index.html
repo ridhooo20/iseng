@@ -102,9 +102,10 @@
 
       })
 
-      setTimeout(function(){
-    location.reload();
-  }, 1000);
+      if (!localStorage.getItem("firstLoadDone")) {
+    localStorage.setItem("firstLoadDone", "true");
+    location.reload(); // Refresh halaman sekali
+}
 
     </script>
   </body>
